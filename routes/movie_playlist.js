@@ -28,9 +28,10 @@ router.get('/:id',(req, res) =>{
 /* ----- POST (création) movies_playlists ----- */
 
   router.post('/post', (req, res) => {
-    const formData = req.body;
-    if (formData.movie_id == null || formData.movie_id === '' || formData.playlist_id == null || formData.playlist_id === '') {
-      res.status(400).send("champs manquant");
+    const moviePlayliistArray = req.body
+    if (moviePlayliistArray.length === 0) {
+
+      res.status(400).send("aucun film ajouté à la playliste");
     } else {
       connection.query('INSERT INTO movie_playlist SET ?', formData, (err, results) => {
         if (err) {

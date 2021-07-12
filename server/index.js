@@ -27,18 +27,17 @@ app.listen(port, () => {
 
 /*------------------------ import des routes -----------------------------*/
 
-const movies = require('../routes/movies');
-app.use('/api/movies', movies);
+const tomes = require('../routes/tomes');
+app.use('/api/tomes', tomes);
 
-const playlists = require('../routes/playlists');
-app.use('/api/playlists', playlists);
+const collections = require('../routes/collections');
+app.use('/api/collections', collections);
 
-const movie_playlist = require('../routes/movie_playlist');
-app.use('/api/movie_playlist', movie_playlist);
-
+const series = require('../routes/series');
+app.use('/api/series', series)
 
 /*----------------------------- acceuil ------------------------------------*/
 app.get("/", (request, response) => {
-  response.send("Welcome to movies list");
+  response.send("Welcome to my mangas");
 });
 

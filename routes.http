@@ -2,81 +2,117 @@
 ### home
 GET http://localhost:8000
 
-//----------------------- partie filme
+# //----------------------- partie tomes
+
+### get all tomes
+GET http://localhost:8000/api/tomes
 
 
-### get all movies
-GET http://localhost:8000/api/movies
+### get 1 tomes from id
+GET http://localhost:8000/api/tomes/5
 
-### get 1 movie from id
-GET http://localhost:8000/api/movies/3
+# //----------------------- partie colection
 
-### POST movie
-POST http://localhost:8000/api/movies/post
-Content-Type: application/json
+### get all colection
+GET http://localhost:8000/api/collections
+
+
+### get all serie in colection by user id
+GET http://localhost:8000/api/collections/serie_collection
+content-Type: application/json
 
 {
-    "id" : "1",
-    "title": "111111111111",
-    "director": "gagi",
-    "year": "1",
-    "color": "0",
-    "duration": "12"
+    "user_id": 1
 }
 
-### PUT movie
-PUT http://localhost:8000/api/movies/3/update
-Content-Type: application/json
+### get all tome by serie for a user
+GET http://localhost:8000/api/collections/tome_collection
+content-Type: application/json
 
 {
-    "title": "gggururururururg"
+    "user_id": 1,
+    "serie_id": 1
+}
+
+
+# //----------------------- partie series
+
+### get all series
+GET http://localhost:8000/api/series
+
+
+
+
+# ### get 1 movie from id
+# GET http://localhost:8000/api/movies/3
+
+# ### POST movie
+# POST http://localhost:8000/api/movies/post
+# Content-Type: application/json
+
+# {
+#     "id" : "13",
+#     "title": ",nouveau test",
+#     "director": "michel",
+#     "year": "1100",
+#     "color": "1",
+#     "duration": "3"
+# }
+
+# ### PUT movie
+# PUT http://localhost:8000/api/movies/3/update
+# Content-Type: application/json
+
+# {
+#     "title": "Ceci est notre nouveau titre",
+#     "year": 1991
     
-}
+# }
 
-### DELETE movie
-DELETE http://localhost:8000/api/movies/4
+# ### DELETE movie
+# DELETE http://localhost:8000/api/movies/13
 
 
 
-//----------------------- partie playliste
+# //----------------------- partie playliste
 
-### get playlist listes
-GET http://localhost:8000/api/playlists
+# ### get playlist listes
+# GET http://localhost:8000/api/playlists
 
-### GET 1 movie from id
-GET http://localhost:8000/api/playlists/1
+# ### GET 1 movie from id
+# GET http://localhost:8000/api/playlists/1
 
-### POST playliste
-POST http://localhost:8000/api/playlists/post
-Content-Type: application/json
+# ### POST playliste
+# POST http://localhost:8000/api/playlists/post
+# Content-Type: application/json
 
-{
-    "genre" :"playliste a suprimer",
-    "name" : "playliste a suprimer"
-}
+# {
+#     "genre" :"playliste a suprimer",
+#     "name" : "playliste a suprimer"
+# }
 
-### PUT playliste
-PUT http://localhost:8000/api/playlists/1/update
-Content-Type: application/json
+# ### PUT playliste
+# PUT http://localhost:8000/api/playlists/1/update
+# Content-Type: application/json
 
-{
-    "genre" :"filme de guerre",
-    "name" : "mes pref"
-}
+# {
+#     "genre" :"filme de guerre",
+#     "name" : "mes pref"
+# }
 
-### DELETE playliste
-DELETE http://localhost:8000/api/playlists/6
+# ### DELETE playliste
+# DELETE http://localhost:8000/api/playlists/6
 
-//---------------------------------partie movie_playlist
+# //---------------------------------partie movie_playlist
 
-### trouver les films liés a une playlist en fonction de l'id de la playliste
-GET http://localhost:8000/api/movie_playlist/2
+# ### trouver les films liés a une playlist en fonction de l'id de la playliste
+# GET http://localhost:8000/api/movie_playlist/2
 
-### créer une nouvelle liaison entre un film et une playliste
-POST http://localhost:8000/api/movie_playlist/post
-Content-Type: application/json
+# ### créer une nouvelle liaison entre un film et une playliste
+# POST http://localhost:8000/api/movie_playlist/post
+# Content-Type: application/json
 
-{
-    "movie_id" :"2",
-    "playlist_id" : "2"
-}
+# {
+#     "movie_id" :"2",
+#     "playlist_id" : "2"
+# }
