@@ -23,7 +23,7 @@ GET http://localhost:8000/api/collections/serie_collection/1
 
 ### get all tome by serie for a user (a retravailler)
 
-GET http://localhost:8000/api/collections/tome_collection/1/2
+GET http://localhost:8000/api/collections/alltomes_collection/1/2
 
 ### post a new tome in a serie for user's colection
 POST http://localhost:8000/api/collections/tome_collection_add/
@@ -34,6 +34,8 @@ POST http://localhost:8000/api/collections/tome_collection_add/
 ### get all series
 GET http://localhost:8000/api/series
 
+### get all tomes in a serie
+GET http://localhost:8000/api/series/alltomes_serie/2
 
 
 

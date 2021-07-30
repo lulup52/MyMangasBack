@@ -17,4 +17,25 @@ router.get("/",(req, res) =>{
     });
 });
 
+/* ----- GET all tomes in a serie ----- */
+
+router.get("/alltomes_serie/:serieid", (req, res) => {
+  serieId =  req.params.serieid
+    connection.query(
+      "select tome.id AS tomeID,serie_id, title, subtitle, tome_sumary FROM serie JOIN tome ON tome.serie_id=serie.id WHERE serie.id =?;",
+      [serieId],
+    
+      (err, results) => {
+        if (err) {  
+            res.status(500).send("Erreur serveur");
+         } else {
+              if (results.length === 0) {
+                  res.status(404).send("aucun tomes trouvés");
+              } else {
+                  res.status(200).json(results);
+              }
+         }
+      });
+  });
+
 module.exports = router;

@@ -38,7 +38,7 @@ router.get("/serie_collection/:userid", (req, res) => {
   });
 /* ----- GET all tomes by collection and user id ----- */
 
-router.get("/tome_collection/:userid/:serieid", (req, res) => {
+router.get("/alltomes_collection/:userid/:serieid", (req, res) => {
   userid =  req.params.userid
   serieid =  req.params.serieid
     connection.query(
