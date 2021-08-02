@@ -18,7 +18,10 @@ GET http://localhost:8000/api/collections
 
 
 ### get all serie in colection by user id
-GET http://localhost:8000/api/collections/serie_collection/1
+GET http://localhost:8000/api/collections/serie_collection/3
+
+### get all serie in colection by user id
+GET http://localhost:8000/api/collections/serie_notin_collection/3
 
 
 ### get all tome by serie for a user (a retravailler)
