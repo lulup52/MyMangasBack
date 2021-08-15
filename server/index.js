@@ -36,6 +36,9 @@ app.use('/api/collections', collections);
 const series = require('../routes/series');
 app.use('/api/series', series)
 
+const lectures = require('../routes/lectures');
+app.use('/api/lectures', lectures)
+
 /*----------------------------- acceuil ------------------------------------*/
 app.get("/", (request, response) => {
   response.send("Welcome to my mangas");

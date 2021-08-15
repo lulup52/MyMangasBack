@@ -16,6 +16,18 @@ router.get("/",(req, res) =>{
       }
     });
 });
+/* ----- GET all tomes in collections by user id  ----- */
+
+router.get("/tome_collection/:userid",(req, res) =>{
+    let userId=req.params.userid
+    connection.query('SELECT * from collection where user_id=?',[userId], (err, results) => {
+      if (err) {
+        res.status(500).send('Erreur lors de la récupération des collections');
+      } else {
+        res.status(200).json(results);
+      }
+    });
+});
 /* ----- GET all series in collection by user id ----- */
 
 router.get("/serie_collection/:userid", (req, res) => {

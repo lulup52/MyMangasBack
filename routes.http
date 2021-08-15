@@ -18,15 +18,17 @@ GET http://localhost:8000/api/collections
 
 
 ### get all serie in colection by user id
-GET http://localhost:8000/api/collections/serie_collection/3
+GET http://localhost:8000/api/collections/serie_collection/1
 
-### get all serie in colection by user id
-GET http://localhost:8000/api/collections/serie_notin_collection/3
+### get all serie not in colection by user id
+GET http://localhost:8000/api/collections/serie_notin_collection/1
 
 
 ### get all tome by serie for a user (a retravailler)
-
 GET http://localhost:8000/api/collections/alltomes_collection/1/2
+
+# ### get all tome in colection for a user (a retravailler)
+# GET http://localhost:8000/api/collections/tome_collection/2"
 
 ### post a new tome in a serie for user's colection
 POST http://localhost:8000/api/collections/tome_collection_add/
@@ -39,6 +41,16 @@ GET http://localhost:8000/api/series
 
 ### get all tomes in a serie
 GET http://localhost:8000/api/series/alltomes_serie/2
+
+# //----------------------- partie lectures
+
+
+### get all lectures
+GET http://localhost:8000/api/lectures
+
+
+### GET all lectures by user id 
+GET http://localhost:8000/api/lectures/tome_lecture/1
 
 
 
