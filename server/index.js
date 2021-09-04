@@ -30,14 +30,14 @@ app.listen(port, () => {
 const tomes = require('../routes/tomes');
 app.use('/api/tomes', tomes);
 
-const collections = require('../routes/collections');
-app.use('/api/collections', collections);
+const collection = require('../routes/collection');
+app.use('/api/collection', collection);
 
 const series = require('../routes/series');
 app.use('/api/series', series)
 
-const lectures = require('../routes/lectures');
-app.use('/api/lectures', lectures)
+const lecture = require('../routes/lecture');
+app.use('/api/lecture', lecture)
 
 /*----------------------------- acceuil ------------------------------------*/
 app.get("/", (request, response) => {
