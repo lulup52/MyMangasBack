@@ -48,7 +48,7 @@ router.get("/serie_collection/:userid", (req, res) => {
          }
       });
   });
-/* ----- GET all tomes by collection and user id ----- */
+/* ----- GET all tomes in a serie by collection and user id ----- */
 
 router.get("/alltomes_collection/:userid/:serieid", (req, res) => {
   userid =  req.params.userid

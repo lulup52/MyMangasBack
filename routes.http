@@ -25,7 +25,7 @@ GET http://localhost:8000/api/collection/serie_notin_collection/1
 
 
 ### get all tome by serie for a user (a retravailler)
-GET http://localhost:8000/api/collection/alltomes_collection/1/2
+GET http://localhost:8000/api/collection/alltomes_collection/1/4
 
 # ### get all tome in colection for a user (a retravailler)
 # GET http://localhost:8000/api/collection/tome_collection/2"
@@ -55,6 +55,8 @@ GET http://localhost:8000/api/lecture/tome_lecture/3
 ###  GET all series in lectures by user id
 GET http://localhost:8000/api/lecture/series_lecture/3
 
+### get all tome from a serie in a lecture by user id 
+GET http://localhost:8000/api/lecture/tomes_in_serie
 
 # ### get 1 movie from id
 # GET http://localhost:8000/api/movies/3

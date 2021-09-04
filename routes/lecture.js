@@ -50,4 +50,26 @@ router.get("/series_lecture/:userid", (req, res) => {
     });
 });
 
+router.get("/tomes_in_serie/:userid/:serieid", (req, res) => {
+  userid =  req.params.userid
+  serieid =  req.params.serieid
+    connection.query(
+      "select user_id ,user_name,tome.id AS tomeId, serie.id AS seriId, title, subtitle, num_tome, tome.ilustration, tome_sumary from lecture join tome ON lecture.tome_id=tome.id JOIN serie ON tome.serie_id=serie.id JOIN user ON lecture.user_id=user.id where user_id=? AND tome.serie_id=?;",
+      [userid, serieid],
+    
+      (err, results) => {
+        if (err) {  
+            res.status(500).send("Erreur serveur");
+         } else {
+              if (results.length === 0) {
+                  res.status(404).send("série introuvable");
+              } else {
+                  res.status(200).json(results);
+              }
+         }
+      });
+  });
+
+http://localhost:8000/api/lectures/
+
 module.exports = router;
