@@ -104,12 +104,15 @@ router.get("/serie_notin_collection/:userid", (req, res) => {
     });
 });
 
-/* ----- post a new tome in a serie for user's colection----- */
+/* ----- post a tome(id) in user's(id) colection----- */
 
-router.post("", (req, res) => {
+router.post("/tome_collection_add/:userid/:tomeid", (req, res) => {
+  userId =  req.params.userid
+  tomeid =  req.params.tomeid
+
     connection.query(
-      "",
-      [],
+      "INSERT INTO collection (tome_id, user_id) VALUES (?,?);",
+      [tomeid, userId],
     
       (err, results) => {
         if (err) {  
