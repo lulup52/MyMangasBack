@@ -23,6 +23,8 @@ GET http://localhost:8000/api/collection/serie_collection/1
 ### get all serie not in colection by user id
 GET http://localhost:8000/api/collection/serie_notin_collection/1
 
+### get all tomes not in colection by user id and serie 
+GET http://localhost:8000/api/collection/tome_notin_collection_by_serie/1/2
 
 ### get all tome by serie for a user (a retravailler)
 GET http://localhost:8000/api/collection/alltomes_collection/1/4

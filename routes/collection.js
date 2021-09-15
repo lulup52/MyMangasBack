@@ -99,6 +99,49 @@ router.get("/serie_notin_collection/:userid", (req, res) => {
        }
     });
 });
+/* ----- Get all tomes not include in user colection by series ----- */
+
+router.get("/tome_notin_collection_by_serie/:userid/:serieid", (req, res) => {
+  userId =  req.params.userid
+  serieId =  req.params.serieid
+  connection.query(
+    //---we get all tomes in collection by serie
+    "SELECT user_name, user.id as user_id, tome.serie_title, serie_id, subtitle,num_tome, tome.id FROM tome JOIN collection ON tome.id = collection.tome_id join user ON collection.user_id=user.id WHERE user.id = ? AND serie_id=?",
+    [userId, serieId],
+    (err, tomesToCheck) => {
+      if (err) {  
+          console.log(err);
+          res.status(500).send("Erreur serveur");
+       } else {
+            if (tomesToCheck.length === 0) {
+                res.status(404).send("série introuvable");
+            } else {
+              console.log(tomesToCheck)
+                let idTomeToRemove = tomesToCheck.map(e => e.id)
+                connection.query(    
+                  "select tome.id as tome_id, serie.id as serie_id, serie.serie_title, tome.ilustration, subtitle, num_tome, tome_sumary from tome join serie on serie.id=tome.serie_id where serie.id = ? and tome.id NOT IN (?);",
+                  [serieId, idTomeToRemove],
+                  (error, result ) => {
+                    if(error) {
+                      console.log(err);
+                       res.status(500).send("Erreur serveur")
+                    }else {
+
+                      if (result.length===0) {
+                        res.status(200).json({fullCollection : "For this serie, you already have all tomes on your collection"});
+                      } else {
+                        res.status(200).json(result)
+                      }
+                    }
+
+                    
+               
+                  }
+                )
+            }
+       }
+    });
+});
 
 /* ----- post a tome(id) in user's(id) colection----- */
 
