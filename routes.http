@@ -27,11 +27,11 @@ GET http://localhost:8000/api/collection/serie_notin_collection/1
 GET http://localhost:8000/api/collection/tome_notin_collection_by_serie/1/2
 
 ### get all tome by serie for a user (a retravailler)
-GET http://localhost:8000/api/collection/alltomes_collection/1/4
+GET http://localhost:8000/api/collection/alltomes_collection/1/1
 
-# ### get all tome in colection for a user (a retravailler)
-# GET http://localhost:8000/api/collection/tome_collection/2"
-
+### delete a tome from a collection
+DELETE  http://localhost:8000/api/collection/delete/1/5"
+ 
 
 ### post a new tome in a serie for user's colection
 POST http://localhost:8000/api/collection/tome_collection_add/2/17
