@@ -41,7 +41,7 @@ router.get("/serie_collection/:userid", (req, res) => {
             res.status(500).send("Erreur serveur");
          } else {
               if (results.length === 0) {
-                  res.status(404).send("série introuvable");
+                  res.status(200).send([]);
               } else {
                   res.status(200).json(results);
               }
@@ -84,7 +84,13 @@ router.get("/serie_notin_collection/:userid", (req, res) => {
           res.status(500).send("Erreur serveur");
        } else {
             if (resultsToCheck.length === 0) {
-                res.status(404).send("série introuvable");
+              connection.query(    
+                " select * from serie", (err, result ) => {
+                  console.log(result)
+                  res.status(200).json(result);
+                }
+              )  
+
             } else {
                 let serieToRemove = resultsToCheck.map(e => e.serieId)
                 connection.query(    
