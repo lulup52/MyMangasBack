@@ -33,7 +33,7 @@ router.get("/tome_collection/:userid",(req, res) =>{
 router.get("/serie_collection/:userid", (req, res) => {
   let userId =  req.params.userid
     connection.query(
-      " select user_id,user_name , serie.id AS serieId,serie.serie_title, nbr_of_tome, serie.ilustration, author from collection JOIN tome ON collection.tome_id=tome.id JOIN serie on serie_id=serie.id JOIN user ON collection.user_id=user.id WHERE user_id=? GROUP BY serie_title;",
+      " select user_id,user_name , serie.id AS serieId,serie.serie_title, serie.sumary, nbr_of_tome, serie.ilustration, author from collection JOIN tome ON collection.tome_id=tome.id JOIN serie on serie_id=serie.id JOIN user ON collection.user_id=user.id WHERE user_id=? GROUP BY serie_title;",
       [userId],
       (err, results) => {
         if (err) {  
@@ -139,9 +139,6 @@ router.get("/tome_notin_collection_by_serie/:userid/:serieid", (req, res) => {
                         res.status(200).json(result)
                       }
                     }
-
-                    
-               
                   }
                 )
             }
