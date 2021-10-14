@@ -6,6 +6,15 @@ GET http://localhost:8000
 
 ### get all user
 GET http://localhost:8000/api/users
+
+### get user if mdp and usename match
+POST http://localhost:8000/api/users/login
+Content-Type: application/json
+
+{
+    "mdp": "0000",
+    "username": "lucas"
+}
 # //----------------------- partie tomes
 
 ### get all tomes
