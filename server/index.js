@@ -39,6 +39,9 @@ app.use('/api/series', series)
 const lecture = require('../routes/lecture');
 app.use('/api/lecture', lecture)
 
+const users = require('../routes/users');
+app.use('/api/users', users)
+
 /*----------------------------- acceuil ------------------------------------*/
 app.get("/", (request, response) => {
   response.send("Welcome to my mangas");

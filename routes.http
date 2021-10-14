@@ -2,6 +2,10 @@
 ### home
 GET http://localhost:8000
 
+# //----------------------- partie user
+
+### get all user
+GET http://localhost:8000/api/users
 # //----------------------- partie tomes
 
 ### get all tomes
