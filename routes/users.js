@@ -31,7 +31,7 @@ router.post("/login",(req, res) =>{
 
         } else {
 
-          res.status(200).json(`${userName} is loged in with the id ${results[0].id}`);
+          res.status(200).json(`${userName} is loged in with the id ${results[0].id} and the token :`);
         }
 
       }

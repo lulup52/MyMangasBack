@@ -7,7 +7,7 @@ GET http://localhost:8000
 ### get all user
 GET http://localhost:8000/api/users
 
-### get user if mdp and usename match
+### get test login
 POST http://localhost:8000/api/users/login
 Content-Type: application/json
 

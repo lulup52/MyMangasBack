@@ -6,7 +6,10 @@ const { request, response } = require('express');
 const port = 8000 ;
 const app = express() ;
 
+/*---------------creation du token et autentification avec celui ci------------------*/
 
+const { createToken } = require('../services/jwt');
+const { authenticateWithJwt } = require('../services/jwt');
 
 
 app.use(cors())
