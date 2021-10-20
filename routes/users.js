@@ -31,8 +31,10 @@ router.post("/login",(req, res) =>{
           res.status(200).json(`données saisies éronnées`);
 
         } else {
-          const token = createToken(results[0])
-          res.status(200).json(`${userName} is loged in with the id ${results[0].id} and the token : ${token}`);
+          const token = createToken(results)
+          results[0].token = token
+          res.status(200).json(results);
+          console.log(results)
         }
 
       }
