@@ -3,6 +3,7 @@ const connection = require('../server/config');
 
 const router = express.Router();
 
+const { createToken } = require('../services/jwt');
 
 
 /* ----- GET all users ----- */
@@ -30,8 +31,8 @@ router.post("/login",(req, res) =>{
           res.status(200).json(`données saisies éronnées`);
 
         } else {
-
-          res.status(200).json(`${userName} is loged in with the id ${results[0].id} and the token :`);
+          const token = createToken(results[0])
+          res.status(200).json(`${userName} is loged in with the id ${results[0].id} and the token : ${token}`);
         }
 
       }
