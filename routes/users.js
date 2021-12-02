@@ -35,7 +35,7 @@ router.post("/login",(req, res) =>{
           results[0].token = token
           res.status(200).json(results);
           console.log(results)
-        }
+        } 
 
       }
     });
